@@ -1,5 +1,5 @@
 ---
-title: DEVOPS. What is it, why embrace it and what how it relates to automation
+title: DEVOPS. What is it, why should you embrace it and is it the same as with automation?
 excerpt: DEVOPS has become the new hype word and very often misused. In this post, I'll explain what DEVOPS is, what it isn't and why it is often confused with automation.
 tags: DEVOPS
 categories: Coaching
