@@ -45,7 +45,7 @@ feature_devops:
     alt: "DEVOPS"
     title: "DEVOPS. What is it, why embrace it and what how it relates to automation"
     excerpt: "DEVOPS has become the new hype word and very often misused. In this post, I'll explain what DEVOPS is, what it isn't and why it is often confused with automation."
-    url: "coaching/2018/09/12/devops-vs-automation-culture-what-is.html"
+    url: "Coaching/2018/09/12/devops-vs-automation-culture-what-is.html"
     btn_label: "Read More"
     btn_class: "btn--large btn--info"
 
