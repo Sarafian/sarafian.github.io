@@ -1,6 +1,6 @@
 ---
 title: DEVOPS. What is it, why should you embrace it and is it the same as with automation?
-excerpt: DEVOPS has become the new hype word and very often misused. In this post, I'll explain what DEVOPS is, what it isn't and why it is often confused with automation.
+excerpt: DEVOPS has become the new hype word and very often misused. In this post, I'll explain what DEVOPS is not, what it is, why it is often confused with automation and is the general value.
 tags:
 - DEVOPS
 categories:
@@ -47,13 +47,13 @@ One of the most interesting summaries I've ever come across is by Adam Jacom ([@
 Notice that this also doesn't refer to words such as skill, automation, programmer or etc. Instead, it focuses on concepts such **movement**, **culture** and **organization**.
 {: .notice}
 
-![devops-philosophy-culture-movement](/assets/images/posts/2018-09-12-devops-philosophy-culture-movement.png){: .align-right}
+![devops-philosophy-culture-movement](/assets/images/posts/2018-09-14-devops-philosophy-culture-movement.png){: .align-right}
 Philosophy, culture and movement are the building blocks of DEVOPS and one is pushing the other. They are at the foundation of the organization and this means that the organization lives and breaths DEVOPS. Anyone who would be hired in such an organization, will operate within this construct. He or she, will either contribute and flourish or fail like with any other rules of engagement. This is extremely important because this flows from the top to the bottom ranks and from the bottom to the top.
 
 When an organization decides to embrace DEVOPS, then during the transition period it must flow from the top ranks more that it flows from the bottom.
 {: .notice}
 
-![devops-principals-flow-feedback-continuous-learning-experimentation](/assets/images/posts/2018-09-12-devops-principals-flow-feedback-continuous-learning-experimentation.png){: .align-left}
+![devops-principals-flow-feedback-continuous-learning-experimentation](/assets/images/posts/2018-09-14-devops-principals-flow-feedback-continuous-learning-experimentation.png){: .align-left}
 DEVOPS is build upon four principals. They are the pillars of how the organization operates. Continuous learning is something that is common with the agile methodology. Feedback is also common to agile but in the case of DEVOPS, the feedback originates from the customer or end users and it is not just the internal feedback. Let's call the customer or end user the **consumer**. Continuous experimentation is common to agile as well, but with DEVOPS the participants are the consumers. As with Agile, flow and speed are necessary but with DEVOPS, flow is much wider. It starts at the inspiration of an idea, either from feedback or internally, and it must flow fast to the point where the consumer benefits.
 
 It could be said that DEVOPS is some sort of Agile on steroids with wider scope and feedback loop. But once you start drilling into what this means, then you can not but realize that this is not just a choice of a development team but it is something that all of the organization is engaged with. For DEVOPS to work, traditional silos need to be broken and the established organization needs to be re-evaluated on every level.
@@ -62,7 +62,7 @@ It could be said that DEVOPS is some sort of Agile on steroids with wider scope 
 
 If you would try to break down DEVOPS into a fluent process you would more or less end up with the following steps.
 
-{% include figure image_path="/assets/images/posts/2018-09-12-devops-build-code-plan-monitor-operate-deploy-release-test.png" alt="devops-build-code-plan-monitor-operate-deploy-release-test" caption="DEVOPS flow" %}
+{% include figure image_path="/assets/images/posts/2018-09-14-devops-build-code-plan-monitor-operate-deploy-release-test.png" alt="devops-build-code-plan-monitor-operate-deploy-release-test" caption="DEVOPS flow" %}
 
 Some of the steps of this process should be already present. To showcase the difference, I'll split the process into two groups, each representing established structures that you can identify with.
 
