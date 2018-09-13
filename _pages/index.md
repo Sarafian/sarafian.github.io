@@ -40,20 +40,21 @@ feature_markdown:
     url: "https://www.powershellgallery.com/packages/MarkdownPS/"
     btn_label: "Go to PowerShell gallery"
     btn_class: "btn--large btn--info"
-feature_ryanair:
-  - image_path: http://l7.alamy.com/zooms/6129c7ea4d154ce8bb4966acc75e3cae/dublin-airport-dublin-ireland-ryanair-boeing-737-aircraft-on-the-stand-begbr9.jpg
-    alt: "Ryan Air Weekend"
-    title: "Ryan Air Weekend"
-    excerpt: "A personal weekend oriented city trip breakdown of RyanAir."
-    url: "/2016/06/27/RyanAirWeekend.html"
+feature_devops:
+  - image_path: /assets/images/posts/2018-09-12-devops-philosophy-culture-movement.png
+    alt: "DEVOPS"
+    title: "DEVOPS. What is it, why embrace it and what how it relates to automation"
+    excerpt: "DEVOPS has become the new hype word and very often misused. In this post, I'll explain what DEVOPS is, what it isn't and why it is often confused with automation."
+    url: "coaching/2018/09/12/devops-vs-automation-culture-what-is.html"
     btn_label: "Read More"
     btn_class: "btn--large btn--info"
+
 ---
 
 {% include feature_row id="feature_recent" type="left" %}
 
+{% include feature_row id="feature_devops" type="left" %}
+
 {% include feature_row id="feature_tips" type="left" %}
 
 {% include feature_row id="feature_markdown" type="left" %}
-
-{% include feature_row id="feature_ryanair" type="left" %}
