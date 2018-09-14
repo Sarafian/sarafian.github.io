@@ -13,8 +13,14 @@ What I found very strange, was that everyone seemed to have a difference of opin
 
 The difference is significant and since it is not the first time that elements in the industry are misusing certain words wrongly, I've decided to do some investigation. Internet was also as confusing so I decided to look into literature, since books are much better in building the foundations around a concept. Unfortunately, the Internet is full of self opinionated and marketing oriented type of content and often it is not easy to distinguish the truth. Proper research that is required to write a book is always indispensable. This situation brought back memories from when agile was a hype in its time. Then everyone talked about it but few actually managed to do agile, yet alone understand it.
 
+So this post is about trying to help you understand what DEVOPS is and what it is not. Since this is also a blog post on the Internet, I understand the controversy so I already suggest you to read a book about this topic. This is what I did to be honest and I read [The DEVOPS Handbook](https://www.oreilly.com/library/view/the-devops-handbook/9781457191381/). This post is about sharing what the book mentions combined with my experiences in organizations that claimed to exercise or understand DEVOPS.
+
+Please consider reading a book about DEVOPS, regardless of whether you chose to continue reading this post.
+
+## The DEVOPS Handbook
+
 ![The DEVOPS Handbook](https://www.safaribooksonline.com/library/cover/9781457191381/360h/){: .align-left}
-Following some twitter profiles that seem to know a bit or two about certain things, I noticed an excitement for [The DEVOPS Handbook](https://www.oreilly.com/library/view/the-devops-handbook/9781457191381/) which was getting released during that time. So I decided to buy it. After reading it, it became to clear to me that the Internet in this case acts a lot like fake news. Partly correct to get readers a buy-in and excitement, but mostly wrong. So this post is about trying to help you understand what DEVOPS is and what it is not. Since this is also a blog post on the Internet, I understand the controversy so I already suggest you to read a book about the subject. If you decide to still read this blog post, then please keep in mind that what you will read mostly originates from this book and from my experiences in organizations that claimed to do or understand DEVOPS.
+Following some twitter profiles that seem to know a bit or two about certain things, I noticed much excitement for [The DEVOPS Handbook](https://www.oreilly.com/library/view/the-devops-handbook/9781457191381/) which was getting released during that time. So I decided to buy it. After reading it, it became to clear to me that the Internet in this case acts a lot like fake news. Partly correct to get readers a buy-in and excitement, but mostly wrong. In the book the history and concept of DEVOPS is explained. How the industry almost 20 years ago, started envisioning such a setup and started doing some small steps. The book is also a collection of case studies, to showcase what DEVOPS has to offer and how it was introduced in each organization. 
 
 ## What is DEVOPS NOT?
 
@@ -100,6 +106,43 @@ This is much easier when working with products provided as software as a service
 
 ## How to get started?
 
+Quite often, the people I meet consider their product's technical debt to be their biggest problem and quite often a unique situation. I feel that this is incorrect. Given the willingness to resolve the issue, reducing the technical dept is a matter of time, which in essence translates into cost spent with money. Technical dept usually implies knowledge of what is wrong which implicitly means there is a known solution for the problem. So, it is only a matter of commitment and investment to reduce or remove this dept.
+
+What is often forgetten is the culture that had led to the situation. Like with all other human activities, software is developed in a manner that represents the dominant culture in an organization. And it's not just about the development but the total culture of how the organizations operate. You clearly recognize the priorities, past and current. You can also recognize the level of knowledge at any given time. The validity of a culture is something that changes over time. The unfortunate attribute of culture is that it often fails to realize when it becomes irrelevant or obsolete. In other words, it might had been in the past that a certain way of working was good while in recent times that way is unsustainable.
+
+Culture is the most difficult to change in an organization because it relates to human attributes that are the most resilient to change, e.g. habits. It is not uncommon to enter meetings where every suggestion for improvement or change gets quickly dismissed based on an argument that is abstract, theoretical and usually is practised over time to shine the most. Even if you decide to try to win the argument, you will rarely succeed because everyone is fine tuned to operate in a manner that protects the established culture, in the same way we human tend to defend our bad habits. The resistance is even stronger with people from older age and it is understandable. They feel they took part in building this culture which they consider successful. Most probably it was in the past but they usually fail to realize that the world has moved on. As with the rest of their lives, they are not keen on changing and learning new ways, so any alternative suggestion feels like a threat to the status quo and they react accordingly.
+
+In these kind of situations, the only way to have a meaningful discussion is to pre-emtively remove non-relevant but fancy counter arguments. To do this, you need basic proof that automatically dismisses any theoretical argument fueled by the momentum of resistance. In once read the following which sounds harsh but it is really on the spot for these type of situations.
+
+> Don’t fight stupid, make more awesome
+{: .text-center}
+
+By Jesse Robbins [@jesserobbins](https://twitter.com/jesserobbins)
+{: .text-right}
+
+DEVOPS is a culture and to embrace it, change in the organization's culture is required and that is going to be extremely difficult. Even if the higher management understands DEVOPS and has fully committed into this, just asking people to change won't work. You need proof to help fend off all non-relevant negative energy and focus on moving forward and how to make it applicable for each organization. In the DEVOPS literature, small change is suggested to be the best practise for adopting DEVOPS. You usually start with a small team which consists of people to apply the concept on one specific part of the organization. It is not going to be 100% perfect, but this group acts a bit like a proof of concept. It shows how it can be done, it deals with the problems and most importantly provides hard and tangible proof about the merits. This naturally means that all is measured and all is monitored.
+
+The chosen task for this small dedicated team needs to be "impressive". It can be something that most consider an impossible task or something that is completely broken in the organization and it is stack in a dead end. The team, regularly share their progress and more importantly how they actually address the issues. They need to show that it is not an easy task, they need to show that unforeseen problems with arise but most importantly they need to show that they are resolved and nothing will get in they way to achieve their goal. 
+
+For this to work this team needs:
+
+- to consist of members that are "believers". They are driven and it is not in their culture to stop.
+- there are no silos. The team acts one and it is not interested in any sort of finger pointing.
+- clear and transparent support from the very top of the organization. 
+
+The last one is in my opinion the most important one. If the management is not fully commited, if the management decides to back down on first big impediment that it will only deliver the opposite message, that is stay in the current culture. And such a behavior is usually the historical explanation when the current culture has become so obsolete and within it "resistance to change" is so recognizable.
+
+## Technical excellence
+
+One big requirement for DEVOPS to succeed is that it requires technical excellence. Building up and maintaining such a high level of trust with the consumer, requires talent, skill and passion.
+
+**Technical Excellence** is the ability to foresee and eliminate an issue before it has the potential to jeopardize safety, schedule, budget, quality, and most importantly, client satisfaction.
+{: .notice--info}
+
+We will all make mistakes at some point and that is unavoidable. Our ability to protect ourselves from hickups and our behavior towards  recovery after the prevention measures failed are very important character traits. 
+
+Most managers won't like the following, but going cheap will only create problems and when left unchecked lead to serious ones. When trust is the foundation of your process, you can't jeopardize it with mediocricy. Instead, managers need to find a way to monetize the benefits of DEVOPS and pay for the cost of the required talent. Organizations that realized this first, made the proper investments, now dominate their industry. Organizations that haven't, need to adapt only to stay in the game and to avoid becoming completely obsolete.
+
 ## Summary
 
 The following are the most interesting points to take away:
@@ -114,6 +157,8 @@ The following are the most interesting points to take away:
   - Requires adaptation.
   - Requires alignment with your customers.
   - Trust is even more important and often goes beyond the signed contracts like a between gentlemen agreement.
+- DEVOPS requires techincal excellence. Without it, you are just looking for trouble.  
+- DEVOPS is not cheap.
 
 And before signing off, here are some tips:
 
