@@ -24,10 +24,10 @@ Following some twitter profiles that seem to know a bit more about certain thing
 
 When discussing with others about DEVOPS, I find it very useful to first clear the air from the usual misunderstandings. So these are what DEVOPS **is not**:
 
-— Not a skill. DEVOPS is not something you ask a person to have as skill.
-— Not **DEV**elopment+**OP**eration**S** just because it seems to fit right.
-— Not automation. Yes there is some relationship between the two, but they are not a synonym.
-— Not about the continuous integration nor the continuous deployment pipeline. This quite often the problem with job advertisements.
+- Not a skill. DEVOPS is not something you ask a person to have as skill.
+- Not **DEV**elopment+**OP**eration**S** just because it seems to fit right.
+- Not automation. Yes there is some relationship between the two, but they are not a synonym.
+- Not about the continuous integration nor the continuous deployment pipeline. This quite often the problem with job advertisements.
 
 ## Why DEVOPS?
 
@@ -87,12 +87,12 @@ Returning to the fore mentioned flow, one would ask so what is so different with
 
 The main difference is that in DEVOPS culture, the feedback and planning is much closer to the consumer. The producer, that is the organization that develops and offers a software service, maintains a special kind of trust with the consumer of these services. This trust has a very important role to play in the development of the service for both parties.
 
-— The producer leverages the consumer's trust to experiment and evaluate what the consumer really needs and uses that information to plan accordingly. This is another topic but to make it simple, consider feature toggling, especially when toggling is applies to small user groups. In a non DEVOPS oriented culture, that would be possible with user surveys etc, but often people don't really know what they want until they get the chance to use it. An experiment in the field has so much more to offer in terms of feedback compared to any other theoretical survey, because it can't get more real than that.
-— The consumer trusts the producer and understands that this process is for his own good. He is patient when something goes wrong because he knows that it will be fixed soon enough. Often he/she is willing to provide feedback and even ideas. Not always will he/she like a feature, but when he feels heard he will actively express his/her opinion. He/She gets engaged with the evolution of his/her favorite service and builds up loyalty.
+- The producer leverages the consumer's trust to experiment and evaluate what the consumer really needs and uses that information to plan accordingly. This is another topic but to make it simple, consider feature toggling, especially when toggling is applies to small user groups. In a non DEVOPS oriented culture, that would be possible with user surveys etc, but often people don't really know what they want until they get the chance to use it. An experiment in the field has so much more to offer in terms of feedback compared to any other theoretical survey, because it can't get more real than that.
+- The consumer trusts the producer and understands that this process is for his own good. He is patient when something goes wrong because he knows that it will be fixed soon enough. Often he/she is willing to provide feedback and even ideas. Not always will he/she like a feature, but when he feels heard he will actively express his/her opinion. He/She gets engaged with the evolution of his/her favorite service and builds up loyalty.
 
 The incentives are simple:
-— The consumer expects an ever improving product, while it often feels that the producer had read his mind. 
-— The producer wants to deliver the best possible services to maintain loyalty and secure revenue. 
+- The consumer expects an ever improving product, while it often feels that the producer had read his mind. 
+- The producer wants to deliver the best possible services to maintain loyalty and secure revenue. 
 
 When something goes wrong, then as long as the producer can remove the problem fast, then it all works out for the best. People are more willing to offer trust to services that have a proven record of excellence, especially during difficult times, than with services that revealed their weakness and can't solve the problem fast. 
 
@@ -124,9 +124,9 @@ The chosen task for this small dedicated team needs to be **impressive**. It can
 
 For this to work this team needs:
 
-— to consist of members that are "believers". They are driven and it is not in their culture to stop.
-— there are no silos. The team acts as one and it is not interested in any sort of finger pointing. They all succeed and they all fail together.
-— clear and transparent support from the very top of the organization. 
+- to consist of members that are "believers". They are driven and it is not in their culture to stop.
+- there are no silos. The team acts as one and it is not interested in any sort of finger pointing. They all succeed and they all fail together.
+- clear and transparent support from the very top of the organization. 
 
 The last one is in my opinion the most important one. If the management is not fully committed, if the management decides to back down on first signs of trouble that will only deliver the opposite message, which is to stay in the current culture. And such a behavior of management is usually the historical explanation of why an organization has failed to evolve with time.
 
@@ -145,19 +145,19 @@ Most managers won't like the following, but going cheap will only create problem
 
 The following are the most interesting points to take away:
 
-— DEVOPS is not a skill. Instead, it is culture in an organization.
-— DEVOPS is not automation. Automation is an enabler for DEVOPS. 
-— DEVOPS is a completely different operational model. 
- — Trust with your consumers is one of the most important factors of success.
-  — Requires core changes in how the organization works.
-— DEVOPS works best with products and especially products deployed with the SAAS model. Projects have an end date and as such they break the loop.
-— DEVOPS can work with on promise deployments of products as well. 
- — Requires some adaptation in the process.
-  — Requires alignment with your customers.
-  — Trust is even more important and often goes beyond the signed contracts, similar to a gentlemens agreement.
-— DEVOPS requires technical excellence. Without it, you are just looking for trouble.  
-— DEVOPS is not cheap but it pays out.
-— When starting with DEVOPS, take one small step at a time.
+- DEVOPS is not a skill. Instead, it is culture in an organization.
+- DEVOPS is not automation. Automation is an enabler for DEVOPS. 
+- DEVOPS is a completely different operational model. 
+ - Trust with your consumers is one of the most important factors of success.
+  - Requires core changes in how the organization works.
+- DEVOPS works best with products and especially products deployed with the SAAS model. Projects have an end date and as such they break the loop.
+- DEVOPS can work with on promise deployments of products as well. 
+ - Requires some adaptation in the process.
+  - Requires alignment with your customers.
+  - Trust is even more important and often goes beyond the signed contracts, similar to a gentlemens agreement.
+- DEVOPS requires technical excellence. Without it, you are just looking for trouble.  
+- DEVOPS is not cheap but it pays out.
+- When starting with DEVOPS, take one small step at a time.
 
 Most importantly of all
 
