@@ -17,8 +17,8 @@ So this post is about trying to help you understand what DevOps is about and wha
 
 ## The DevOps Handbook
 
-![The DEVOPS Handbook](https://www.safaribooksonline.com/library/cover/9781457191381/360h/){:.align-left}
-Following some twitter profiles that seem to know a bit more about certain things, I noticed much excitement for [The DEVOPS Handbook](https://www.oreilly.com/library/view/the-devops-handbook/9781457191381/) which was getting released in October 2016. So I decided to buy it. After reading it, it became so clear to me that the Internet, in this case, acts a lot like fake news. Partly correct to get readers a buy-in and excitement, but often wrong as well. The book goes over the history and explains concepts around DevOps. How did the industry start almost 20 years ago envisioning such a setup and how some groups started taking the first small steps. After the introduction, the book refers to and analyzes case studies, to help showcase what DevOps has to offer and how it was adopted in each organization. 
+![The DevOps Handbook](https://www.safaribooksonline.com/library/cover/9781457191381/360h/){:.align-left}
+Following some twitter profiles that seem to know a bit more about certain things, I noticed much excitement for [The DevOps Handbook](https://www.oreilly.com/library/view/the-devops-handbook/9781457191381/) which was getting released in October 2016. So I decided to buy it. After reading it, it became so clear to me that the Internet, in this case, acts a lot like fake news. Partly correct to get readers a buy-in and excitement, but often wrong as well. The book goes over the history and explains concepts around DevOps. How did the industry start almost 20 years ago envisioning such a setup and how some groups started taking the first small steps. After the introduction, the book refers to and analyzes case studies, to help showcase what DevOps has to offer and how it was adopted in each organization. 
 
 ## What is DevOps NOT?
 
@@ -31,7 +31,7 @@ When discussing with others about DevOps, I find it very useful to first clear t
 
 ## Why DevOps?
 
-It is also very useful to understand the purpose of DevOps because the motivation sets the foundation for a better apprehension of the meaning and goal of DevOps. I'll use a quote from [The DEVOPS Handbook](https://www.oreilly.com/library/view/the-devops-handbook/9781457191381/) which I find that it offers the best summary of motivation.
+It is also very useful to understand the purpose of DevOps because the motivation sets the foundation for a better apprehension of the meaning and goal of DevOps. I'll use a quote from [The DevOps Handbook](https://www.oreilly.com/library/view/the-devops-handbook/9781457191381/) which I find that it offers the best summary of motivation.
 
 > DevOps benefits us all in the value stream, whether we are Dev, OPS, QA, InfoSec, Product Owners or customers. It brings joy back to developing great products, with fewer deathmatches. It enables humane working conditions with fewer weekends and missed holidays with our loved ones. It enables teams to work together to survive, learn, thrive, delight our customers and help our organization succeed.
 {:.text-center}
@@ -48,7 +48,7 @@ One of the most interesting summaries I've ever come across is by Adam Jacob ([@
 > A cultural and professional movement, focused on how we build and operate high-velocity organizations, born from the experiences of its practitioners
 {:.text-center}
 
-Notice that this also doesn't refer to words such as skill, automation, programmer or etc. Instead, it focuses on concepts such **movement**, **culture** and **organization**. It is also in full alignment with the historical analysis provided in the [The DEVOPS Handbook](https://www.oreilly.com/library/view/the-devops-handbook/9781457191381/).
+Notice that this also doesn't refer to words such as skill, automation, programmer or etc. Instead, it focuses on concepts such **movement**, **culture** and **organization**. It is also in full alignment with the historical analysis provided in the [The DevOps Handbook](https://www.oreilly.com/library/view/the-devops-handbook/9781457191381/).
 {:.notice}
 
 ![devops-philosophy-culture-movement](/assets/images/posts/2018-09-14-devops-philosophy-culture-movement.png){:.align-right}
