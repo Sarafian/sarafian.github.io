@@ -28,6 +28,6 @@ Once you select an alternative language, all other applications will be rendered
 {% include figure image_path="/assets/images/posts/2019-04-23-onedrive-english.PNG" alt="onedrive-english" caption="OneDrive in English" %}
 {% include figure image_path="/assets/images/posts/2019-04-23-onedrive-english.PNG" alt="onedrive-english" caption="OneNote in English" %}
 
-**Note** that the url for the language settings can also lead to the general settings of OneDrive which are a lot. Just adapt the following and you are good to go. `https://brusselsairlines-my.sharepoint.com/personal/{sortofemail}/_layouts/15/settings.aspx`
+**Note** that the url for the language settings can also lead to the general settings of OneDrive which are a lot. Just adapt the following and you are good to go. `https://brusselsairlines-my.sharepoint.com/personal/{sortofemail}/_layouts/15/settings.aspx`. {:.notice}
 
 
