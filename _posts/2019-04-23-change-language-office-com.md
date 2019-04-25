@@ -3,6 +3,8 @@ title: Configure language in office.com
 excerpt: This post explains how office.com is organized in terms of configuration and how to change the language
 categories:
 - Tips
+header:
+  overlay_image: https://www.surfspot.nl/media/catalog/product/cache/6b1c09900b407c50fce2db5e66ebc123/m/i/microsoft_office_365_met_logos.png
 ---
 
 I've recently joined an organization where the [office.com](https://office.com) was configured to use the French language, despite the fact that I do not speak French. It is very easy to change the language for the mail application. But for applications like Word, Excel, PowerPoint and OneDrive I couldn't and at the end I reached out to the IT organization who did some digging and asked questions to Microsoft. This post is the share the insight I received, share some basics on how [office.com](https://office.com) applications are organized and provide a quick tip on how to change the language and other settings your self.
@@ -22,7 +24,7 @@ The insight is that [office.com](https://office.com) applications are divided in
 
 With my mail application configured to English, I was always running into a French UI when accessing OneDrive or the rest of the Office applications. In the same time, opening the same assets from the locally installed applications would be in English. The difference in localization settings between the web, mobile and laptop/pc applications should be also something to consider from Microsoft. I could never find a UI option to enter settings like I normally do for the mail application and IT had to help me construct a URL to access the language configuration page. 
 
-The URL is like this `https://brusselsairlines-my.sharepoint.com/personal/{sortofemail}/_layouts/15/muisetng.aspx` where the **{sortofemail}** is, in essence, a "url friendly" version of your email. To find your own, just navigate to the OneDrive application and extract your **{sortofemail}** from the URL on your browser address bar. It should look like this `https://brusselsairlines-my.sharepoint.com/personal/{sortofemail}/_layouts/15/onedrive.aspx`.
+The URL is like this `https://{tenant}.sharepoint.com/personal/{sortofemail}/_layouts/15/muisetng.aspx` where the **{sortofemail}** is, in essence, a "url friendly" version of your email. To find your own including the **{tenant}**, just navigate to the OneDrive application and extract them from the URL on your browser address bar. It should look like this `https://{tenant}.sharepoint.com/personal/{sortofemail}/_layouts/15/onedrive.aspx`.
 
 {% include figure image_path="/assets/images/posts/2019-04-23-settings-french.PNG" alt="settings-french" caption="OneDrive settings in French" %}
 
@@ -35,4 +37,5 @@ Once this is done, refresh or open again all tabs with OneDrive applications and
 {% include figure image_path="/assets/images/posts/2019-04-23-onedrive-english.PNG" alt="onedrive-english" caption="OneDrive in English" %}
 {% include figure image_path="/assets/images/posts/2019-04-23-onedrive-english.PNG" alt="onedrive-english" caption="OneNote in English" %}
 
-If you want to access all OneDrive settings, then use the above technique with the only difference being that the landing page is `settings.aspx` instead of `muisetng.aspx`. It should be like this `https://brusselsairlines-my.sharepoint.com/personal/{sortofemail}/_layouts/15/settings.aspx`.{: .notice--info}
+If you want to access all OneDrive settings, then use the above technique with the only difference being that the landing page is `settings.aspx` instead of `muisetng.aspx`. It should be like this `https://{tenant}.sharepoint.com/personal/{sortofemail}/_layouts/15/settings.aspx`.
+{: .notice--info}
