@@ -35,4 +35,4 @@ Once this is done, refresh or open again all tabs with OneDrive applications and
 {% include figure image_path="/assets/images/posts/2019-04-23-onedrive-english.PNG" alt="onedrive-english" caption="OneDrive in English" %}
 {% include figure image_path="/assets/images/posts/2019-04-23-onedrive-english.PNG" alt="onedrive-english" caption="OneNote in English" %}
 
-If you want to access all OneDrive settings, then use the above technique with the only difference being that the landing page is `settings.aspx` instead of `muisetng.aspx`. It should be like this `https://brusselsairlines-my.sharepoint.com/personal/{sortofemail}/_layouts/15/settings.aspx`.{:.tip}
+If you want to access all OneDrive settings, then use the above technique with the only difference being that the landing page is `settings.aspx` instead of `muisetng.aspx`. It should be like this `https://brusselsairlines-my.sharepoint.com/personal/{sortofemail}/_layouts/15/settings.aspx`.{: .notice--info}
