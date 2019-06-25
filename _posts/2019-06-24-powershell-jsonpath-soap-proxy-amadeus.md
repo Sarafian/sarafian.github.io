@@ -94,7 +94,7 @@ Being a bit stubborn and not easily accepting something as impossible with code,
 1. Wrap the life cycle management of the [Amadeus][2] session state to make code simpler. **This is actually the only goal that is specific to Amadeus**. I set this goal because I want overall as much as possible clean and simple code. It would be a shame to ruin the code experience by asking the developer to constantly move around the session values.
 1. Find a solution for the missing header of `New-WebServiceProxy`.
 
-In the following posts, I'll discuss the solution with an individual post about each goal. Unfortunately, the only goal that I haven't solved yet, is the last one. My workaround is to leverage [Sentinet][6]'s (API Gateway) processing pipeline to inject the missing header when necessary. I believe that this issue can't be solved because of how old technology is that the `New-WebServiceProxy` depends on and because the proxies created by the cmdlet don't offer much flexibility to do custom header injections. The other issue that is not currently solved is the lack of support for PowerShell Core. This makes the solution Windows platform specific. The only possibility at this moment is to raise yet another issue, [requesting SOAP support from PowerShell][9] or WCF parity from .NET Core. In this [comment][10], it becomes clear why there is much uncertainty if we will ever get cross-platform support for SOAP in PowerShell.
+In the following posts, I'll discuss the solution with an individual post about each goal. Unfortunately, the only goal that I haven't solved yet, is the last one. My workaround is to leverage [Sentinet][6]'s (API Gateway) processing pipeline to inject the missing header when necessary. I believe that this issue can't be solved because of how old technology is that the `New-WebServiceProxy` depends on and because the proxies created by the cmdlet don't offer much flexibility to do custom header injections. The other issue that is not currently solved is the lack of support for PowerShell Core. This makes the solution Windows platform specific. The only possibility at this moment is to raise yet another issue, [requesting SOAP support from PowerShell][9] or WCF parity from .NET Core. In this [comment][15], it becomes clear why there is much uncertainty if we will ever get cross-platform support for SOAP in PowerShell.
 
 # 1ASOAP repository
 
@@ -120,3 +120,4 @@ My solution to each of the above goals is already available in the [1ASOAP][7] r
 [12]: https://github.com/Sarafian/1ASOAP/tree/master/Source/1ASOAP
 [13]: https://goessner.net/articles/JsonPath/
 [14]: https://www.powershellgallery.com/
+[15]: https://github.com/PowerShell/PowerShell/issues/9838#issuecomment-504886982
