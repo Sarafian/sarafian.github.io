@@ -17,7 +17,8 @@ Most airlines, don't even own for example the reservation system. If you actuall
 
 The airline I'm in involved with particularly, uses [Amadeus][1] (aka 1A) as their main driver. [Amadeus's API][2] is a stateful SOAP API and to makes matters worse, it is very much complicated in terms of the data contracts used. 
 
-Please **note** that I'm not an expert on [Amadeus][1] and I'll not discuss analyze [Amadeus API][2] with regards to functionality. Besides, this post is not only about Amadeus. It is everyone who is looking for an easier path into PowerShell and SOAP. {: .notice--tip}
+Please **note** that I'm not an expert on [Amadeus][1] and I'll not discuss analyze [Amadeus API][2] with regards to functionality. Besides, this post is not only about Amadeus. It is everyone who is looking for an easier path into PowerShell and SOAP.
+{: .notice--tip}
 
 # UI to drive process
 
