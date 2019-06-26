@@ -20,10 +20,13 @@ This is an example
 | Slow | ![Slow EF Code](/assets/images/posts/2019-07-01-ef-not-optimized.png "Slow EF Code") | ![Slow on SQL Server](/assets/images/posts/2019-07-01-sql-server-profiler-not-optimized.png "Slow on SQL Server") |
 | Fast | ![Fast EF Code](/assets/images/posts/2019-07-01-ef-optimized.png "Fast EF Code") | ![Fast on SQL Server](/assets/images/posts/2019-07-01-sql-server-profiler-optimized.png "Fast on SQL Server") |
 
- When working with SQL Server, simple analysis on the profiler would have revealed the problem. An analysis of the generated SQL can also help to further optimize queries and indexes, so at the end of the day a relatively good understanding of SQL is still required.
+When working with SQL Server, simple analysis on the profiler would have revealed the problem. An analysis of the generated SQL can also help to further optimize queries and indexes, so at the end of the day a relatively good understanding of SQL is still required.
 
 Overall, my advice to people is to avoid, making arbitrary conclusions that are based on personal bias, frustration and lack of relevance. Just consider the history and all the technology around us before **no-sql** became even a word. Look into the data access layer first when an application is struggling. Analyze the queries and the technologies involved. Look into the processes to understand how decisions are made, the expectations and the possibilities.
+
+Pictures captured from NDC conference [Why databases cry at night? - Michael Yarichuk][4]
 
 [1]: https://en.wikipedia.org/wiki/Big_data
 [2]: https://docs.microsoft.com/en-us/ef/
 [3]: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/
+[4]: https://www.youtube.com/watch?v=CUbZ5tNZi7M
