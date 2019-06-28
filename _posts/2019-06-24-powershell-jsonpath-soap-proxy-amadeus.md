@@ -100,6 +100,8 @@ In the following posts, I'll discuss the solution with an individual post about 
 
 My solution to each of the above goals is already available in the [1ASOAP][7] repository. [1ASOAP][7] offers 3 independent PowerShell modules currently residing in this single repository. None of the modules is published at this moment to the [PowerShell gallery][14] but they do work independently of each other.
 
+The following table provides a summary for each module and a link to the more detailed post, if already published.
+
 | Module | Scope | Description | Post |
 | ------ | ----- | ----------- | ---- |
 | [SOAPProxy][10] | General | Initializes and manages SOAP proxies with `New-WebServiceProxy`. Establishes the concept of default proxy. Simplifies the creation of request objects for a given operation. | Not yet published |
