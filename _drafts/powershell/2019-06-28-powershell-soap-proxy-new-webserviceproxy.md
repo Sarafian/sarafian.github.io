@@ -1,6 +1,6 @@
 ---
 title: Improved SOAP proxies management in PowerShell
-excerpt: This is part 1 of a series of posts regarding simplification of PowerShell when working with complicated SOAP interfaces e.g. Amadeus. SOAPProxy, part of 1ASAOP, is a PowerShell module, to help manage proxies created by `New-WebServiceProxy`.
+excerpt: This is part 1 of a series of posts regarding simplification of PowerShell when working with complicated SOAP interfaces e.g. Amadeus API. SOAPProxy, currently part of 1ASAOP, is a PowerShell module, to help manage proxies created by `New-WebServiceProxy`.
 categories:
 - Amadeus
 tags:
@@ -10,15 +10,15 @@ tags:
 
 # Under the hood of New-WebServiceProxy
 
-When using [New-WebServiceProxy][1], PowerShell will download the API's WSDL and use it to generate the respected proxy interface and the respected data contracts for the parameters, the response and the headers. This is all achieved by leveraging the `System.Web.Services` assembly which in .NET is the workhorse for the ASMX back on those days. ASMX was the predecessor of WCF and is also known as the supporting technology for SOAP 1.1.
+When using [New-WebServiceProxy][1], PowerShell will download the API's WSDL and use it to generate types for the proxy's interface, data contracts and headers. This is all achieved by leveraging the `System.Web.Services` assembly which in .NET is the workhorse for the ASMX, a technology rather old. ASMX was the predecessor of WCF and is also known for supporting SOAP 1.1.
 
-What is not clear to most, is that the generated types reside within an in-memory assembly. Let's imagine that we create a proxy against a SOAP interface containing one operation `DoSomething` that accepts a parameter of type `DoSomethingRequest` and returns an output of type `DoSomethingResponse`. 
+What is not clear to most, is that the generated types reside within an in-memory assembly. Let's imagine that we create a proxy against a SOAP interface containing one operation `DoSomething` that accepts a parameter of type `DoSomethingRequest` and returns an output of type `DoSomethingResponse`. `DoSomethingRequest` and `DoSomethingResponse` are the data contracts.
 
 ```powershell
 $proxy1=New-WebServiceProxy -Uri $uriDoSomething -Namespace Example
 ```
 
-The `-Namespace` parameter is optional and when not specified then it gets a random value from the cmdlet. To help simplify this post, we'll keep the parameter with value `Example`.
+The `-Namespace` parameter is optional and when not specified then it gets a random value from the cmdlet. To help simplify this post, we'll keep using the parameter with value `Example`, so all mentioned namespaces are rooted with `Example`.
 
 When the proxy is created, the following types should be available
 
@@ -34,11 +34,11 @@ $request.Property1="something"
 $response=$proxy.DoSomething($request)
 ```
 
-All the types are part of an in-memory assembly that has a random name. To help this post, this assembly is named `5wx5pbrx, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null`.
+All the types are part of an in-memory assembly that has a random name. To help this post, we will assume that the assembly is named `5wx5pbrx, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null`.
 
 # The problem
 
-In the meantime, if the `$proxy=New-WebServiceProxy -Uri $uriDoSomething -Namespace Example` is executed again then problems start surfacing because this execution created yet another set of the same types but in a different assembly e.g. `4qodbdsw, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null`. The two invocations would have resulted in following set of types:
+In the meantime, if the `$proxy=New-WebServiceProxy -Uri $uriDoSomething -Namespace Example` is executed again then problems start surfacing because the new execution creates yet another set of the same types but in a different assembly e.g. `4qodbdsw, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null`. The two invocations would have resulted in following set of types:
 
 | Invocation | Assembly Qualified Name |
 | ---------- | ----------------------- |
@@ -47,7 +47,7 @@ In the meantime, if the `$proxy=New-WebServiceProxy -Uri $uriDoSomething -Namesp
 | 2nd | `Example.DoSomethingRequest, 4qodbdsw, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null` |
 | 2nd | `Example.DosomethingResponse, 4qodbdsw, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null` |
 
-For those who are not proficient with .NET, the type name is not enough to identity it in the runtime. Instead the full name of the assembly is also used to produce what you would consider a unique identifier of a type also known as **Assembly Qualified Name**.
+For those who are not proficient with .NET, the type name is not enough to identity a type it in the runtime. Instead the full name of the assembly is also used to produce what you would consider a unique identifier of a type also known as **Assembly Qualified Name**.
 {: .notice--tip}
 
 `$proxy1` expects as a parameter an instance of type `Example.DoSomethingRequest, 5wx5pbrx, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null` and `$proxy2` expects `Example.DoSomethingRequest, 4qodbdsw, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null`. The problem is that when code like `[Example.DoSomethingRequest]::new()` is executed then it is unclear which exact type was instantiated because we didn't specify the assembly qualified name and this is a scenario that is not typical within the .NET runtime. This can lead to situations where types from the `5wx5pbrx` assembly would be used with types from the `4qodbdsw` assembly, which leads to errors that don't make sense.
@@ -64,7 +64,7 @@ The [SOAPProxy][2] PowerShell module helps address this problem.
 | `New-SOAPProxyRequest` | Instantiates a request object expected by an operation in a proxy. |
 | `Trace-SOAPProxy` | Helps with understanding how the request and response types of an operation are structured. This is effectively a redirection to `Trace-JSONPath` from the [JSONPath][6] module. |
 
-The module's main functionality is to wrap the `New-WebServiceProxy` and make sure to invoke it only when necessary. The functionality is supported by `Initialize-SOAPProxy` and internally, the cmdlet maintains a sort of proxy cache within the global variables. When the parameters of `Initialize-SOAPProxy` match an existing proxy, then `New-WebServiceProxy` is not executed and the one from memory is used. The condition to match an existing proxy is the `-Uri`. The `-Uri` is also used by the `Get-SOAPProxy` cmdlet to retrieve a proxy for a given URI.
+The module's main functionality is to wrap the `New-WebServiceProxy` and make sure to invoke it only when necessary. The functionality is supported by `Initialize-SOAPProxy` and internally, the cmdlet maintains a sort of proxy cache within the global variables. When the parameters of `Initialize-SOAPProxy` match an existing proxy, then `New-WebServiceProxy` is not executed and the one from memory is used. The condition to match an existing proxy is the `-Uri`. The `-Uri` is also used by the `Get-SOAPProxy` cmdlet to retrieve a proxy for a given URI. This is not only faster, it also helps avoid the mixup with the assemblies.
 
 The `Initialize-SOAPProxy` can also leverage the global variables to track a default proxy. When a proxy is created as default, then all cmdlets in the module can be used without specifying the `-URI` parameter. This is a very common case because usually a script targets one endpoint and can be marked as default. Then, the rest of the script assumes that there is a default proxy which makes the code cleaner and easier to read. It increases also its maintainability.
 
@@ -100,6 +100,10 @@ For the rest of the examples, we will assume that a default proxy is created lik
 # PowerShell Core not supported
 
 With the [SOAPProxy][2] module depending on [New-WebServiceProxy][1], it means that PowerShell versions higher than 5.1 are not supported. Unfortunately, [New-WebServiceProxy][1] is ASMX era technology and is powered by the `System.Web.Services` assembly. Therefore, porting to PowerShell Core seems very unlucky because the assembly needs to be ported to .NET Core and that will probably never happen. ASMX is old technology and the successor is WCF but even that is not 100% supported by the .NET Core and the team has no plans to do better based on their most recent [roadmap][5] announcement. Regardless, I've created another issue on the PowerShell repository [requesting SOAP support from PowerShell][3]. In my [comment][4], it becomes clear why there is much uncertainty if we will ever get cross-platform support for SOAP in PowerShell.
+
+The most unfortunate side effect of this limitations is that scripts depending on the [SOAPProxy][2] module cannot be executed on
+- Azure Function with PowerShell.
+- Non Windows platforms.
 
 # Working with the soap proxy
 
