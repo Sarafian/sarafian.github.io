@@ -19,8 +19,8 @@ This is an example
 
 | Case | EF Code | SQL Server |
 | ---- | ------- | ---------- |
-| Slow | ![Slow EF Code](/assets/images/posts/2019-07-01-ef-not-optimized.png "Slow EF Code") | ![Slow on SQL Server](/assets/images/posts/2019-07-01-sql-server-profiler-not-optimized.png "Slow on SQL Server") |
-| Fast | ![Fast EF Code](/assets/images/posts/2019-07-01-ef-optimized.png "Fast EF Code") | ![Fast on SQL Server](/assets/images/posts/2019-07-01-sql-server-profiler-optimized.png "Fast on SQL Server") |
+| Slow | ![Slow EF Code](/assets/images/posts/2019-07-01-ef-not-optimized.PNG "Slow EF Code") | ![Slow on SQL Server](/assets/images/posts/2019-07-01-sql-server-profiler-not-optimized.PNG "Slow on SQL Server") |
+| Fast | ![Fast EF Code](/assets/images/posts/2019-07-01-ef-optimized.PNG "Fast EF Code") | ![Fast on SQL Server](/assets/images/posts/2019-07-01-sql-server-profiler-optimized.PNG "Fast on SQL Server") |
 
 When working with SQL Server, a simple analysis on the profiler would have revealed the problem. An analysis of the generated SQL can also help to further optimize queries and indexes, so at the end of the day, a relatively good understanding of SQL is still required. Remember, that database developers were an actual role in the past. They would be the ones developing the design and queries for maximum performance. This role is missing nowadays from development teams because they were considered expensive, the overall performance has improved and consolidation of roles followed.
 
