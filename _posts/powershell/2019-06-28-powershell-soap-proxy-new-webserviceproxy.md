@@ -1,12 +1,15 @@
 ---
 title: Improved SOAP proxies management in PowerShell
-excerpt: This is part 1 of a series of posts regarding simplification of PowerShell when working with complicated SOAP interfaces e.g. Amadeus API. SOAPProxy, currently part of 1ASAOP, is a PowerShell module, to help manage proxies created by `New-WebServiceProxy`.
+excerpt: SOAPProxy, currently part of 1ASAOP, is a PowerShell module to help manage proxies created by `New-WebServiceProxy`.
 categories:
 - Amadeus
 tags:
 - PowerShell
 - SOAP
 ---
+
+Although SOAPProxy is a stand-alone solution to improving SOAP over PowerShell, it was developed as part of a greater problem that is discussed in [Introduction to posts about JSONPath, SOAP and Amadeus with PowerShell][9].
+{: .notice--info}
 
 # Under the hood of New-WebServiceProxy
 
@@ -223,3 +226,4 @@ $requestPNR_Retrieve=$requestPNR_Retrieve | Set-JSONPath -Path "settings.printer
 [6]: https://github.com/Sarafian/1ASOAP/tree/master/Source/JSONPath
 [7]: https://goessner.net/articles/JsonPath/
 [8]: https://developers.amadeus.com/enterprise
+[9]: {% link _posts/2019-06-24-powershell-jsonpath-soap-proxy-amadeus.md %}

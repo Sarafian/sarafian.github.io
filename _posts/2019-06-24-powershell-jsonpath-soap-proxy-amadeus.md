@@ -104,7 +104,7 @@ The following table provides a summary for each module and a link to the more de
 
 | Module | Scope | Description | Post |
 | ------ | ----- | ----------- | ---- |
-| [SOAPProxy][10] | General | Initializes and manages SOAP proxies with `New-WebServiceProxy`. Establishes the concept of default proxy. Simplifies the creation of request objects for a given operation. | Not yet published |
+| [SOAPProxy][10] | General | Initializes and manages SOAP proxies with `New-WebServiceProxy`. Establishes the concept of default proxy. Simplifies the creation of request objects for a given operation. | [Improved SOAP proxies management in PowerShell][16] |
 | [JSONPath][11] | General | Offer [JSONPath][13] approach with expressions such as `A.B.C` when performing `Set` and `Find` operations. The `Trace` functionality was developed as a big accelerator to help understand the structure and received data and smoothen out the developer and debugging experience.| Not yet published |
 | [1ASOAP][12] | [Amadeus API][2] | Abstraction over [Amadeus API][2] state management. **Does not** include any specifics for any operation and hence works with any composed endpoint. | Not yet published |
 
@@ -123,3 +123,4 @@ The following table provides a summary for each module and a link to the more de
 [13]: https://goessner.net/articles/JsonPath/
 [14]: https://www.powershellgallery.com/
 [15]: https://github.com/PowerShell/PowerShell/issues/9838#issuecomment-504886982
+[16]: {% link _posts/powershell/2019-06-28-powershell-soap-proxy-new-webserviceproxy.md %}
