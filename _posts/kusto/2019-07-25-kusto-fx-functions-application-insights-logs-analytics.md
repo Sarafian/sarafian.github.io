@@ -3,17 +3,17 @@ title: Create/Save functions in application insights log analytics
 excerpt: When in logs analytics of application insights, you might notice under the sources one "fx functions" without any UI options. So what is it?
 categories:
 - Azure
-- Application insights
-- Logs analytics
 tags:
 - kusto
+- Application insights
+- Logs analytics
 ---
 
 # Introduction
 
 I've recently started working with [Azure's application insights][1] and I'm really having fun with it. When I first started, I noticed that under the sources that there is something that reads as `fx functions`. 
 
-{% include figure image_path="/assets/images/posts/kusto/2019-07-25-fx-functions.png" alt="Azure application insights logs analytics fx functions" caption="Functions" %}
+![Azure application insights logs analytics fx functions](/assets/images/posts/kusto/2019-07-25-fx-functions.png "Functions")
 
 Very recently I realized that the `fx` is actually an icon.
 {: .notice--tip}
@@ -32,11 +32,11 @@ What you need is the **Application Insights Component Contributor** and **Applic
 
 When you press **Save**, then the following form appears
 
-{% include figure image_path="/assets/images/posts/kusto/2019-07-25-save-functions-form.png" alt="Azure application insights logs analytics save form" caption="Save form" %}
+![Azure application insights logs analytics save form](/assets/images/posts/kusto/2019-07-25-save-functions-form.png "Save form")
 
 Without the **Application Insights Component Contributor** role, the **Function** option in the **Save as** drop-down is missing. After saving the function, it will show up both as a shared query with `fx` icon and under the functions as well. 
 
-{% include figure image_path="/assets/images/posts/kusto/2019-07-25-shared-queries.png" alt="Azure application insights logs shared query and function" caption="Shared query and function" %}
+![Azure application insights logs shared query and function](/assets/images/posts/kusto/2019-07-25-shared-queries.png "Shared query and function")
 
 You are allowed to have both a shared query and a function with the same name (e.g. `test`) but it is not advised because when trying to update the function an error is thrown.
 {: .notice--tip}
@@ -59,7 +59,7 @@ To delete a function you effectively delete an entry from the shared queries. Pr
 
 A function is the same as a query with the only difference being that it shows up on the left and can be referenced by other queries. You can't save a function for example like this
 
-```
+```text
 let fServiceNameFromCloudRoleName = (name:string){
     iff(
         name<>"", @"true value",
@@ -70,7 +70,20 @@ let fServiceNameFromCloudRoleName = (name:string){
 
 and then use it like this
 
+```text
+union requests,dependencies
+| extend Extra_In_ServiceName=fsn(cloud_RoleName)
 ```
+
+Instead a function would contain both and create a new dataset by extending the union of `requests` and `dependencies`.
+
+```text
+let fServiceNameFromCloudRoleName = (name:string){
+    iff(
+        name<>"", @"true value",
+        @"false value"
+    )
+}
 union requests,dependencies
 | extend Extra_In_ServiceName=fsn(cloud_RoleName)
 ```
@@ -84,7 +97,6 @@ I believe that documentation for this particular topic can greatly be improved.
 - The [Resources, roles, and access control in Application Insights][3] doesn't properly explain how these roles affect the ability to save a function
 - The UI in the application insights is not helpful. In contrast, when trying to save a shared query, the option is there and an error is thrown when the roles are not assigned. This is a clear indicator that the feature is there but permissions are missing. 
 - The [documentation][1] has very little explanation over what a function is and when it does explain, it focuses on in script functions.
-- There seems to a limitation on the alias length. For example `extendedView` doesn't successfully save but `extenView` does and 9  seems to be the maximum allowed length for an alias.
 - The alias in a function is completed disconnected from the shared query name and it does not easily identify the one that needs to be edited or deleted.
 - The term function is wrong and misleading.
 
