@@ -1,6 +1,6 @@
 ---
 title: Create/Save functions in application insights log analytics
-excerpt: When in logs analytics of application insights, you might notice under the sources a "fx functions" without any UI options. So what is it?
+excerpt: When in logs analytics of application insights, you might notice under the sources one "fx functions" without any UI options. So what is it?
 categories:
 - Azure
 - Application insights
@@ -15,16 +15,16 @@ I've recently started working with [Azure's application insights][1] and I'm rea
 
 {% include figure image_path="/assets/images/posts/kusto/2019-07-25-fx-functions.png" alt="Azure application insights logs analytics fx functions" caption="Functions" %}
 
-Very recently I realized tha the `fx` is actually an icon.
+Very recently I realized that the `fx` is actually an icon.
 {: .notice--tip}
 
-I thought this would be great as one could enhance the default query language with functions that are aligned with the organization's deployment language. These functions could be shared to help reduce the size of the queries while keeping everything cleaner. But, I first needed to master *kusto*, so I focused in building up big queries.
+I thought this would be great as one could enhance the default query language with functions that are aligned with the organization's deployment language. These functions could be shared to help reduce the size of the queries while keeping everything cleaner. But, I first needed to master *kusto*, so I focused on building up big queries.
 
 # Where is the save option?
 
 Once I learned enough, I've decided it was time to break my big queries into smaller chunks that would also single source common functionality. I couldn't find how and as much as I searched online and read the [documentation][1], I couldn't find any useful leads. So, I raised a question on [stackoverflow][2].
 
-It seems that my organization was blocking this by means of authorization and if that is the case with you, I hope this post offers you the leads to help you navigate the waters. I had a suspicion that this was the case, because I couldn't create a shared query as well.
+It seems that my organization was blocking this through authorization and if that is the case with you, I hope this post offers you the leads to help you navigate the waters. I had a suspicion that this was the case, because I couldn't create a shared query as well.
 
 What you need is the **Application Insights Component Contributor** and **Application Insights Snapshot Debugger** roles on the applications insights instance as described in the [Resources, roles, and access control in Application Insights][3] page. With these roles, you can create and edit existing functions as well as shared queries. 
 
@@ -34,7 +34,7 @@ When you press **Save**, then the following form appears
 
 {% include figure image_path="/assets/images/posts/kusto/2019-07-25-save-functions-form.png" alt="Azure application insights logs analytics save form" caption="Save form" %}
 
-Without the **Application Insights Component Contributor** role, the **Function** option in the **Save as** drop down is missing. After saving the function, it will show up both as a shared query with `fx` icon and under the functions as well. 
+Without the **Application Insights Component Contributor** role, the **Function** option in the **Save as** drop-down is missing. After saving the function, it will show up both as a shared query with `fx` icon and under the functions as well. 
 
 {% include figure image_path="/assets/images/posts/kusto/2019-07-25-shared-queries.png" alt="Azure application insights logs shared query and function" caption="Shared query and function" %}
 
@@ -45,7 +45,7 @@ The **name** in the form is how the function shows as a shared query on the righ
 
 # Using a function
 
-The alias is also the reference artifact in the queries, similar to e.g. `requests, `dependencies` etc. For example the following kusto query would execute the `test` function:
+The alias is also the reference artefact in the queries, similar to e.g. `requests, `dependencies` etc. For example, the following kusto query would execute the `test` function:
 
 ```text
 test
@@ -57,7 +57,7 @@ To delete a function you effectively delete an entry from the shared queries. Pr
 
 # What is really a function?
 
-A function is really the same as a query with the only difference being that it shows up on the left and can be referenced by other queries. You can't really save a function for example like this
+A function is the same as a query with the only difference being that it shows up on the left and can be referenced by other queries. You can't save a function for example like this
 
 ```
 let fServiceNameFromCloudRoleName = (name:string){
@@ -79,16 +79,15 @@ This means that a function is more like a source like `requests`,`dependencies` 
 
 # Suggestions
 
-I believe that documentation for this particular topic can greatly improved. 
+I believe that documentation for this particular topic can greatly be improved. 
 
 - The [Resources, roles, and access control in Application Insights][3] doesn't properly explain how these roles affect the ability to save a function
 - The UI in the application insights is not helpful. In contrast, when trying to save a shared query, the option is there and an error is thrown when the roles are not assigned. This is a clear indicator that the feature is there but permissions are missing. 
 - The [documentation][1] has very little explanation over what a function is and when it does explain, it focuses on in script functions.
-- There seems to a limitation on the alias length. For example `extendedView` doesn't successfully save but `extenView` does and 9  seems to be the maximum allowed length for alias.
-- The alias in a function is completed disconnected from the shared query  name and it is not easy identify the one that needs to be edited or deleted.
+- There seems to a limitation on the alias length. For example `extendedView` doesn't successfully save but `extenView` does and 9  seems to be the maximum allowed length for an alias.
+- The alias in a function is completed disconnected from the shared query name and it does not easily identify the one that needs to be edited or deleted.
 - The term function is wrong and misleading.
 
 [1]: https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
 [2]: https://stackoverflow.com/questions/57177895/what-is-the-fx-functions-in-azure-applications-insights-how-can-you-add-one/57178156
 [3]: https://docs.microsoft.com/en-us/azure/azure-monitor/app/resources-roles-access-control
-
