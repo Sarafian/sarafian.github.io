@@ -51,15 +51,42 @@ The alias is also the reference artifact in the queries, similar to e.g. `reques
 test
 ```
 
-To edit/update the function, just do what you would to edit/update a query. After pressing **Save** just select the same type, name and alias.
+To edit/update the function, just do what you would to edit/update a query. After pressing **Save** just select the same type, name and alias. 
+
+To delete a function you effectively delete an entry from the shared queries. Problem is that there you select based on the name and not the alias.
+
+# What is really a function?
+
+A function is really the same as a query with the only difference being that it shows up on the left and can be referenced by other queries. You can't really save a function for example like this
+
+```
+let fServiceNameFromCloudRoleName = (name:string){
+    iff(
+        name<>"", @"true value",
+        @"false value"
+    )
+}
+```
+
+and then use it like this
+
+```
+union requests,dependencies
+| extend Extra_In_ServiceName=fsn(cloud_RoleName)
+```
+
+This means that a function is more like a source like `requests`,`dependencies` etc are. If you would compare this with SQL, then a function in logs analytics is more like a view which combines and extends the data sets from the other sources.
 
 # Suggestions
 
-I believe that documentation for this particular topic can greatly improve. 
+I believe that documentation for this particular topic can greatly improved. 
 
 - The [Resources, roles, and access control in Application Insights][3] doesn't properly explain how these roles affect the ability to save a function
 - The UI in the application insights is not helpful. In contrast, when trying to save a shared query, the option is there and an error is thrown when the roles are not assigned. This is a clear indicator that the feature is there but permissions are missing. 
 - The [documentation][1] has very little explanation over what a function is and when it does explain, it focuses on in script functions.
+- There seems to a limitation on the alias length. For example `extendedView` doesn't successfully save but `extenView` does and 9  seems to be the maximum allowed length for alias.
+- The alias in a function is completed disconnected from the shared query  name and it is not easy identify the one that needs to be edited or deleted.
+- The term function is wrong and misleading.
 
 [1]: https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
 [2]: https://stackoverflow.com/questions/57177895/what-is-the-fx-functions-in-azure-applications-insights-how-can-you-add-one/57178156
