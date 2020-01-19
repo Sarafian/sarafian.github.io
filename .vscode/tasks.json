@@ -1,0 +1,81 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Bundler Jekyll Serve",
+            "type": "shell",
+            "command": "bundler",
+            "args": [
+                "exec",
+                "jekyll",
+                "serve",
+                "-l",
+                "-w",
+                "--force_polling",
+                "-i"
+            ],
+            "group": "none",
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "Bundler Jekyll Clean",
+            "type": "shell",
+            "command": "bundler",
+            "args": [
+                "exec",
+                "jekyll",
+                "clean"
+            ],
+            "group": "none",
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "WSL (Debian) Bundler Jekyll Clean",
+            "type": "shell",
+            "command": "wsl",
+            "args": [
+                "-d",
+                "Debian",
+                "-e",
+                "bundler",
+                "exec",
+                "jekyll",
+                "clean"
+            ],
+            "group": "none",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "WSL (Debian) Bundler Jekyll Serve",
+            "type": "shell",
+            "command": "wsl",
+            "args": [
+                "-d",
+                "Debian",
+                "-e",
+                "bundler",
+                "exec",
+                "jekyll",
+                "serve",
+                "-l",
+                "-w",
+                "--force_polling",
+                "-i"
+            ],
+            "group": "none",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
