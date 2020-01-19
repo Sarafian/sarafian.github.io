@@ -13,15 +13,15 @@ Initially I thought that [Windows Insider Program][1] was at fault because I not
 
 I've looked in processes, registry key and I even [configured the lock screen display timeout on Windows][4] to be different from the timeout of turning off the display. This is quite a useful feature and I don't understand why it is hidden from the majority. Some people asked to check on drivers as they are some cases when a program or a driver intervenes and doesn't allow the monitor to turn off.
 
-![Power Options\Display](/assets/images/posts/2020-01-16-power-options-display-turn-off-console-lock-separated-timeout.PNG "Power Options\Display")
+![Power Options\Display](/assets/images/posts/2020-01-16-power-options-display-turn-off-console-lock-separated-timeout.png "Power Options\Display")
 
 But nothing worked and I was ready to give up but I decided to have another look and investigate again anything result when searching for **lock**`**. My investigation would require experimentation and for this reason I lowered my timeouts to 1 and 2 minutes respectively for locking and turning off. At the end I found where the problem was. In the **Lock screen** settings there is a **Background** option. When the background is set to **Slideshow** then the monitors don't turn off. 
 
-![Settings\Lock Screen\Background](/assets/images/posts/2020-01-16-lock-screen-background-slideshow.PNG "Settings\Lock Screen\Background")
+![Settings\Lock Screen\Background](/assets/images/posts/2020-01-16-lock-screen-background-slideshow.png "Settings\Lock Screen\Background")
 
 Switching it to the default value of **Picture** solves the problem.
 
-![Settings\Lock Screen\Background](/assets/images/posts/2020-01-16-lock-screen-background-picture.PNG "Settings\Lock Screen\Background")
+![Settings\Lock Screen\Background](/assets/images/posts/2020-01-16-lock-screen-background-picture.png "Settings\Lock Screen\Background")
 
 In my opinion there is an obvious bug in Windows because the setting should control only what is shown in the screen and not when the monitor turns off which is managed by the power settings.
 
