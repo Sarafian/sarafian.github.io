@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Bundler Jekyll Serve",
+            "label": "Bundle Jekyll Serve",
             "type": "shell",
-            "command": "bundler",
+            "command": "bundle",
             "args": [
                 "exec",
                 "jekyll",
@@ -22,9 +22,9 @@
             }
         },
         {
-            "label": "Bundler Jekyll Clean",
+            "label": "Bundle Jekyll Clean",
             "type": "shell",
-            "command": "bundler",
+            "command": "bundle",
             "args": [
                 "exec",
                 "jekyll",
@@ -36,14 +36,14 @@
             }
         },
         {
-            "label": "WSL (Debian) Bundler Jekyll Clean",
+            "label": "WSL (Debian) Bundle Jekyll Clean",
             "type": "shell",
             "command": "wsl",
             "args": [
                 "-d",
                 "Debian",
                 "-e",
-                "bundler",
+                "bundle",
                 "exec",
                 "jekyll",
                 "clean"
@@ -55,14 +55,14 @@
             "problemMatcher": []
         },
         {
-            "label": "WSL (Debian) Bundler Jekyll Serve",
+            "label": "WSL (Debian) Bundle Jekyll Serve",
             "type": "shell",
             "command": "wsl",
             "args": [
                 "-d",
                 "Debian",
                 "-e",
-                "bundler",
+                "bundle",
                 "exec",
                 "jekyll",
                 "serve",
