@@ -1,7 +1,9 @@
 ---
 title: Configure Ruby and Jekyll in VisualStudio online environment
 excerpt: Configure Ruby and Jekyll on a Visual Studio Online environment to access from your browser or local Visual Studio Code.
-tags: Jekyll
+tags: 
+  - Jekyll
+  - vsonline
 categories: Tips
 header:
   overlay_image: http://www.userx.co.za/assets/images/journal/jekyll-logo-820x418.png
