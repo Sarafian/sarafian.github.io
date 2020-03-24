@@ -25,11 +25,19 @@ feature_recent:
     btn_label: "Go to posts"
     btn_class: "btn--large btn--info"
 feature_tips:
-  - image_path: http://www.attackplan.com/uploads/1/2/7/5/12756948/3540479_orig.png
+  - image_path: http://wcd.so/wp-content/uploads/2013/03/image4.jpg
     alt: "Tips"
     title: "Tips & Tricks"
     excerpt: "Useful tips and tricks."
     url: "/categories/#tips"
+    btn_label: "Go to posts"
+    btn_class: "btn--large btn--info"
+feature_lowcode:
+  - image_path: https://solutionsreview.com/application-development/files/2019/07/top-low-code-platforms-1.jpg
+    alt: "Low-Code development"
+    title: "Low-Code development tools and services"
+    excerpt: "My journey into the low-code world"
+    url: "/categories/#low-code"
     btn_label: "Go to posts"
     btn_class: "btn--large btn--info"
 feature_markdown:
@@ -38,6 +46,22 @@ feature_markdown:
     title: "MarkdownPS"
     excerpt: "PowerShell module for markdown rendering."
     url: "https://www.powershellgallery.com/packages/MarkdownPS/"
+    btn_label: "Go to PowerShell gallery"
+    btn_class: "btn--large btn--info"
+feature_xwrite:
+  - image_path: https://www.powershellgallery.com/Content/Images/Branding/psgallerylogo.svg
+    alt: "XWrite"
+    title: "XWrite"
+    excerpt: "A powershell module that enhances the output of Write-Host, Write-Debug, Write-Verbose, Write-Information and  Write-Warning"
+    url: "https://www.powershellgallery.com/packages/XWrite/"
+    btn_label: "Go to PowerShell gallery"
+    btn_class: "btn--large btn--info"
+feature_powershell:
+  - image_path: https://www.powershellgallery.com/Content/Images/Branding/psgallerylogo.svg
+    alt: "PowerShell Modules"
+    title: "PowerShell Modules"
+    excerpt: "A collection of PowerShell modules available on the gallery"
+    url: "https://www.powershellgallery.com/packages?q=dev1978"
     btn_label: "Go to PowerShell gallery"
     btn_class: "btn--large btn--info"
 feature_devops:
@@ -53,8 +77,14 @@ feature_devops:
 
 {% include feature_row id="feature_recent" type="left" %}
 
+{% include feature_row id="feature_lowcode" type="left" %}
+
 {% include feature_row id="feature_devops" type="left" %}
 
 {% include feature_row id="feature_tips" type="left" %}
 
 {% include feature_row id="feature_markdown" type="left" %}
+
+{% include feature_row id="feature_xwrite" type="left" %}
+
+{% include feature_row id="feature_powershell" type="left" %}
