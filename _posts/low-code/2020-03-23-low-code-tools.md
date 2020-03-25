@@ -3,7 +3,6 @@ excerpt: I've always had reservations for such tools and decided to take a look 
 tags: 
     Automation
     Low-Code
-date: 2016-05-14 17:40:03
 categories: Low-Code
 title: Low (No) Code tools from a software engineer's perspective
 
