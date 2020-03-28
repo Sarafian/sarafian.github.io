@@ -10,5 +10,7 @@ main:
     url: /categories/
   - title: "PowerShell"
     url: /tags/#powershell
+  - title: "Low-Code"
+    url: /categories/#low-code
 #  - title: "About me"
 #    url: /about-sarafian-alex/ 
