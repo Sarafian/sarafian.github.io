@@ -5,6 +5,7 @@ tags:
     Low-Code
     Facebook
     Messenger
+    Zapier
 categories: Low-Code
 title: Creating a private Facebook Messenger chatbot
 
@@ -16,7 +17,7 @@ In this post, I want to explain how to create a private bot on [Facebook]'s [Mes
 
 With *private*, I'm referring to bots that are not possible to be found by others or won't interact with others. These sort of bots are meant usually for some personal automation, where the bot act as the delivery entity to you or your family.
 
-On my previous post [Creating a private Telegram chatbot]({% link _posts/2016-06-27-RyanAirWeekend.md %}), a comment was raised on the [dev.to] platform about the "private" nature of [Telegram]'s bots. With private, I'm referring to a bot that though not private can help establish your very own private communication channel. You control who can interact with the bot and who not. If the bot is discoverable, then there is no functionality supported to others and most importantly, your communication is only visible to yourself or others you have invited.
+On my previous post [Creating a private Telegram chatbot]({% link _posts/low-code/2020-03-24-create-private-telegram-chatbot.md %}), a comment was raised on the [dev.to] platform about the "private" nature of [Telegram]'s bots. With private, I'm referring to a bot that though not private can help establish your very own private communication channel. You control who can interact with the bot and who not. If the bot is discoverable, then there is no functionality supported to others and most importantly, your communication is only visible to yourself or others you have invited.
 
 ## Creating a Facebook page
 
@@ -63,7 +64,7 @@ That's it.
 
 ## Integrating with Zapier
 
-On my previous post [Creating a private Telegram chatbot]({% link _posts/2016-06-27-RyanAirWeekend.md %}) I've explained how to send messages to the bot. This allows for any integration with e.g. [Zapier] or [Integromat]. To demonstrate the ability to send messages to the `Example Private Messenger Bot` I'll show how to hook it up with [Zapier] which offers an integration. To keep it simple and focused on [chatfuel] and this post, I'll use a two-step zap.
+On my previous post [Creating a private Telegram chatbot]({% link _posts/low-code/2020-03-24-create-private-telegram-chatbot.md %}) I've explained how to send messages to the bot. This allows for any integration with e.g. [Zapier] or [Integromat]. To demonstrate the ability to send messages to the `Example Private Messenger Bot` I'll show how to hook it up with [Zapier] which offers an integration. To keep it simple and focused on [chatfuel] and this post, I'll use a two-step zap.
 
 1. `Schedule by Zapier` configured to activate every hour.
 1. `chatfuel` configured to target a session with the `Example Private Messenger Bot`.
