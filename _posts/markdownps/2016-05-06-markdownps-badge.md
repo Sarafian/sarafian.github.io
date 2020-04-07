@@ -1,7 +1,5 @@
 ---
 excerpt: Render badges with PowerShell MarkdownPS and shields.io
-header:
-  overlay_image: http://shields.io/logo.svg
 tags:
 - PowerShell
 - MarkdownPS
@@ -10,7 +8,6 @@ categories: Tips
 title: Shields.io badges with powershell MarkdownPS
 
 ---
-
 
 
 In my previous post [MarkdownPS](/post/markdownps/markdownps/) I explained the basic cmdlets of the PowerShell module [MarkdownPS](https://www.powershellgallery.com/packages/MarkdownPS/).
@@ -27,9 +24,9 @@ New-MDImage -Subject "<SUBJECT>" -Status "<STATUS>" -Color red
 ```
 Renders
 
-```markdown
+~~~
 ![](https://img.shields.io/badge/%3CSUBJECT%3E-%3CSTATUS%3E-red.svg)
-```
+~~~
 
 The produced url in the image is url encoded. The parameter `-Color` accepts only values that the shields.io API allows.
 
