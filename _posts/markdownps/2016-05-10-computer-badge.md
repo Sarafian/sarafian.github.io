@@ -9,9 +9,7 @@ title: Computer state badges
 
 ---
 
-
-
-Using [MarkdownPS](/post/markdownps/markdownps/) this is a cmdlet that 
+Using [MarkdownPS](https://www.powershellgallery.com/packages/MarkdownPS/) PowerShell module this is a simple cmdlet that 
 
 1. Tests the state of the computer using PowerShell's `Test-Connection` cmdlet
 1. Depending on the outcome it generates a badge in markdown with red or green state. 
@@ -46,14 +44,16 @@ function New-ComputerBadge {
 ```
 
 Example
+
 ```powershell
 New-ComputerBadge -Computer "EXAMPLE"
 ```
 renders the following markdown
-```markdown
+
+~~~
 ![](https://img.shields.io/badge/EXAMPLE-Live-green.svg)
 ![](https://img.shields.io/badge/EXAMPLE-Not%20Live-red.svg)
-```
+~~~
 
-- ![](https://img.shields.io/badge/EXAMPLE-Live-green.svg)
-- ![](https://img.shields.io/badge/EXAMPLE-Not%20Live-red.svg)
+> ![](https://img.shields.io/badge/EXAMPLE-Live-green.svg)
+> ![](https://img.shields.io/badge/EXAMPLE-Not%20Live-red.svg)

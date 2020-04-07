@@ -8,8 +8,6 @@ excerpt: PowerShell module to render markdown
 
 ---
 
-
-
 [MarkdownPS](https://www.powershellgallery.com/packages/MarkdownPS/) is a PowerShell module that wraps the **markdown** syntax into PowerShell cmdlets.
 
 Initially I ran into the [PSMarkdown](https://www.powershellgallery.com/packages/PSMarkdown) for which [ishu3101](https://github.com/ishu3101) had developed a cmdlet that renders a table in markdown syntax. This was very useful and I decided that I needed more functionality provided by cmdlets to render other aspects of markdown. After discussing with [ishu3101](https://github.com/ishu3101) I pushed a head and created a module of my own. The `New-MDTable` cmdlet's code is inspired by the `ConvertTo-Markdown` by [ishu3101](https://github.com/ishu3101) but I enhanced it with column alignment. 
@@ -26,13 +24,13 @@ New-MDHeader "The second largest heading" -Level 2
 
 renders
 
-```markdown
+~~~
 # Headings
 
 ## The second largest heading
 
 ###### The smallest heading
-```
+~~~
 
 > # Headings
 > 
@@ -57,13 +55,13 @@ New-MDParagraph -Lines $lines
 
 renders
 
-```markdown
+~~~
 Paragraphs are separated by empty lines. Within a paragraph it's possible to have a line break,
 simply press <return> for a new line.
 
 For example,
 like this.
-```
+~~~
 
 > Paragraphs are separated by empty lines. Within a paragraph it's possible to have a line break,
 > simply press <return> for a new line.
@@ -72,14 +70,17 @@ like this.
 > like this.
 
 ## Bold, Italic and StrikeThrough
+
 ```powershell
 New-MDCharacterStyle -Text "Italic characters" -Style Italic
 New-MDCharacterStyle -Text "bold characters" -Style Bold
 New-MDCharacterStyle -Text "strikethrough text" -Style StrikeThrough
 "All Styles" | New-MDCharacterStyle -Style Bold| New-MDCharacterStyle -Style Italic | New-MDCharacterStyle -Style StrikeThrough
 ```
+
 renders
-```markdownps
+
+~~~
 *Italic characters*
 
 **bold characters**
@@ -87,7 +88,7 @@ renders
 ~~strikethrough text~~
 
 ~~***All Styles***~~
-```
+~~~
 
 > *Italic characters*
 > 
@@ -98,6 +99,7 @@ renders
 > ~~***All Styles***~~
 
 ## Lists
+
 ```powershell
 $lines=@(
     "George Washington",
@@ -123,8 +125,10 @@ New-MDList -Lines @("Describe my changes","Mention all the members of my team") 
 New-MDList -Lines "Ask for feedback" -Level 3 -Style Unordered
 
 ```
+
 renders
-```markdown
+
+~~~
 - George Washington
 - John Adams
 - Thomas Jefferson
@@ -150,7 +154,8 @@ renders
    2. Mention all the members of my team
 
     - Ask for feedback
-```
+~~~
+
 > - George Washington
 > - John Adams
 > - Thomas Jefferson
@@ -178,43 +183,50 @@ renders
 >     - Ask for feedback
 
 ## Links
+
 ```powershell
 "This is "+(New-MDLink -Text "an example" -Link "http://www.example.com/")+" inline link."
 New-MDParagraph
 
 (New-MDLink -Text "This link" -Link "http://www.example.com/" -Title "Title")+" has a title attribute."
 ```
+
 renders
-```markdown
+
+~~~
 This is [an example](http://www.example.com/) inline link.
 
 [This link](http://www.example.com/ "Title") has a title attribute.
-```
+~~~
 
 > This is [an example](http://www.example.com/) inline link.
 > 
 > [This link](http://www.example.com/ "Title") has a title attribute.
 
 ## Images
+
 ```powershell
-New-MDImage -Source "/img/main//welcome.jpg" -AltText "Alt text"
+New-MDImage -Source "https://www.powershellgallery.com/Content/Images/Branding/psgallerylogo.svg" -AltText "Alt text"
 New-MDParagraph
-New-MDImage -Source "/img/main//welcome.jpg" -AltText "Alt text" -Title "Optional title attribute"
+New-MDImage -Source "https://www.powershellgallery.com/Content/Images/Branding/psgallerylogo.svg" -AltText "Alt text" -Title "Optional title attribute"
 ```
+
 renders
-```markdown
-![Alt text](/img/main//welcome.jpg)
 
-![Alt text](/img/main//welcome.jpg "Optional title attribute")
-```
+~~~
+![Alt text](https://www.powershellgallery.com/Content/Images/Branding/psgallerylogo.svg)
 
-> ![Alt text](/img/main//welcome.jpg)
+![Alt text](https://www.powershellgallery.com/Content/Images/Branding/psgallerylogo.svg "Optional title attribute")
+~~~
+
+> ![Alt text](https://www.powershellgallery.com/Content/Images/Branding/psgallerylogo.svg)
 > 
-> ![Alt text](/img/main//welcome.jpg "Optional title attribute")
+> ![Alt text](https://www.powershellgallery.com/Content/Images/Branding/psgallerylogo.svg "Optional title attribute")
 
 
 ## Quote
-```markdown
+
+```powershell
 New-MDParagraph -Lines "In the words of Abraham Lincoln:"
 $lines=@(
     "Pardon my French"
@@ -230,13 +242,15 @@ New-MDQuote -Lines $lines
 ```
 
 renders
-```markdown
+
+~~~
 Multi line quote
 
 > Line 1
 >
 > Line 2
-```
+~~~
+
 > Multi line quote
 > 
 > > Line 1
@@ -245,10 +259,11 @@ Multi line quote
 
 
 ## Code fences
+
 ```powershell
 "Use "+(New-MDInlineCode -Text "git status") + "to list all new or modified files that haven't yet been committed."
 
-New-MDParagraph -Lines "Some basic Git commands are:"
+New-MDParagraph -Lines "Some basic Git commands are:" -Style "text"
 $lines=@(
     "git status",
     "git add",
@@ -256,55 +271,45 @@ $lines=@(
 )
 New-MDCode -Lines $lines
 
-$lines=@(
-    '<?xml version="1.0" encoding="UTF-8"?>'
-    "<node />"
-)
-New-MDCode -Lines $lines -Style "xml"
 ```
+
 renders
 
-```markdown
+~~~
 Use \`git status\`to list all new or modified files that haven't yet been committed.
 Some basic Git commands are:
 
+```text
+    git status
+    git add
+    git commit
 ```
+~~~
+
+> Use `git status`to list all new or modified files that haven't yet been committed.
+> Some basic Git commands are:
+> 
+
+```text
     git status
     git add
     git commit
 ```
 
-```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <node />
-```
-
-```
-
-> Use `git status`to list all new or modified files that haven't yet been committed.
-> Some basic Git commands are:
-> 
-> ```
->     git status
->     git add
->     git commit
-> ```
-> 
-> ```xml
->     <?xml version="1.0" encoding="UTF-8"?>
->     <node />
-> ```
 
 ## Tables
-```markdown
+
+```powershell
 New-MDHeader "Tables"
 New-MDParagraph -Lines "Without aligned columns"
 Get-Command -Module MarkdownPS |Select-Object Name,CommandType,Version | New-MDTable
 New-MDParagraph -Lines "With aligned columns"
 Get-Command -Module MarkdownPS | New-MDTable -Columns ([ordered]@{Name="left";CommandType="center";Version="right"})
 ```
+
 renders
-```markdown
+
+~~~
 Without aligned columns
 
 
@@ -336,7 +341,8 @@ With aligned columns
 | New-MDParagraph      | Function             |                      |
 | New-MDQuote          | Function             |                      |
 | New-MDTable          | Function             |                      |
-```
+~~~
+
 > Without aligned columns
 > 
 > | Name                 | CommandType          | Version              |
@@ -366,4 +372,3 @@ With aligned columns
 > | New-MDParagraph      | Function             |                      |
 > | New-MDQuote          | Function             |                      |
 > | New-MDTable          | Function             |                      |
-
