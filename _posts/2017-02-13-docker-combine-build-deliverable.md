@@ -3,8 +3,6 @@ title: Build and deliver your service within the same medium (container).
 excerpt: When moving to container technology one would think that the CI builds the software, adds it in docker file and and triggers it's build. What if we didn't need outside the container? This post explains this radical concept.
 tags: Container
 categories: 
-header:
-  overlay_image: http://techdistrict.kirkk.com/wp-content/uploads/2009/04/ci.jpg
 ---
 
 For most engineers that have worked on a software project before containers, there is an established concept of building and extracting the deliverable. 
