@@ -1,0 +1,47 @@
+@startuml
+
+title legend
+
+legend
+|= Color |= Flow |
+|<back:#Green>   </back>| Flow 1 |
+|<back:#Red>   </back>| Flow 2 |
+
+endlegend
+
+@enduml
+
+@startuml
+
+title autonumber
+
+autonumber
+Bob -> Alice : Authentication Request
+Bob <- Alice : Authentication Response
+
+@enduml
+
+@startuml
+
+title autonumber-formatted
+
+autonumber "<B>[00]"
+Bob -> Alice : Authentication Request
+Bob <- Alice : Authentication Response
+
+@enduml
+
+@startuml
+TODO:
+
+Example
+
+@enduml
+
+@startuml
+
+title colors
+
+colors
+
+@enduml
