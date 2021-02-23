@@ -108,9 +108,9 @@ end
 
 | Mode | Diagram |
 | ---- | ------- |
-| default | ![Default group background](//home/vscode/workspace/sarafian.github.io/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/solid-group.svg "Default group background") |
-| transparent | ![Transparent group background](//home/vscode/workspace/sarafian.github.io/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/transparent-group.svg "Transparent group background") |
-| semi-transparent | ![Semi-transparent group background](//home/vscode/workspace/sarafian.github.io/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/semi-transparent-group.svg "Semi-transparent group background") |
+| default | ![Default group background](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/solid-group.svg "Default group background") |
+| transparent | ![Transparent group background](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/transparent-group.svg "Transparent group background") |
+| semi-transparent | ![Semi-transparent group background](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/semi-transparent-group.svg "Semi-transparent group background") |
 
 
 
