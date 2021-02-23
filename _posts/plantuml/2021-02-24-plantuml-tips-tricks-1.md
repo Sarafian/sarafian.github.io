@@ -19,11 +19,39 @@ Sometimes, I want to have multiple flows within a component diagram. In this cas
 ```
 @startuml
 
-legend
-|= Color |= Flow |
-|<back:#Green>   </back>| Flow 1 |
-|<back:#Red>   </back>| Flow 2 |
+package "Some Group" {
+  HTTP - [First Component]
+  [Another Component]
+}
 
+node "Other Groups" {
+  FTP - [Second Component]
+  [First Component] --> FTP
+}
+
+cloud {
+  [Example 1]
+}
+
+
+database "MySql" {
+  folder "This is my folder" {
+    [Folder 3]
+  }
+  frame "Foo" {
+    [Frame 4]
+  }
+}
+
+[Another Component] --> [Example 1] #Blue
+[Example 1] --> [Folder 3] #Blue
+[Folder 3] --> [Frame 4] #Blue
+
+
+legend
+    | Color | Flow |
+    |<#Red>|  Flow 1 |
+    |<#Blue>|  Flow 2 |
 endlegend
 
 @enduml
