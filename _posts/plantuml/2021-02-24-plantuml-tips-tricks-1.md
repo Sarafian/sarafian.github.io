@@ -31,6 +31,8 @@ endlegend
 
 Note that the spaces inside the `<back></back>` element are intentional and each space represent one vertical line and 3 represent almost a square.
 
+![Color coded legend](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/legend.svg "Color coded legend")
+
 When sequence is important then I use a numbering scheme like this
 
 - Flow 1
@@ -53,7 +55,6 @@ Bob <- Alice : Authentication Response
 
 @enduml
 ```
-!()[https://s.plantuml.com/imgw/img-319897966ce6fa63c1dfcd7844917b20.webp]
 
 I prefer the `autonumber "<B>[00]"` the most. By default, you can use the command as many times as you want to restart the numbering in the sequence.
 
@@ -66,6 +67,11 @@ Bob <- Alice : Authentication Response
 
 @enduml
 ```
+
+| Mode | Diagram |
+| ---- | ------- |
+| simple | ![Simple autonumber](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/autonumber.svg "Simple autonumber") |
+| formatted | ![Formatted autonumber](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/autonumber-formatted.svg "Formatted autonumber") |
 
 # Text alignment in sequence diagram
 
@@ -80,12 +86,34 @@ This was not easy to find, but [PlantUML] skinning supports alpha channel and th
 
 ```
 @startuml
-TODO:
 
-Example
+skinparam SequenceGroupBodyBackgroundColor #FFFFFF90
+
+box "Internal Service" #LightBlue
+    participant Bob
+    participant Alice
+end box
+
+box "Other" #LightGreen
+    participant Other
+end box
+
+group group
+    Bob -> Alice : hello
+    Alice -> Other : hello
+end
 
 @enduml
 ```
+
+| Mode | Diagram |
+| ---- | ------- |
+| default | ![Default group background](//home/vscode/workspace/sarafian.github.io/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/solid-group.svg "Default group background") |
+| transparent | ![Transparent group background](//home/vscode/workspace/sarafian.github.io/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/transparent-group.svg "Transparent group background") |
+| semi-transparent | ![Semi-transparent group background](//home/vscode/workspace/sarafian.github.io/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/semi-transparent-group.svg "Semi-transparent group background") |
+
+
+
 
 # Visualize all possible colors
 
@@ -99,6 +127,7 @@ colors
 @enduml
 ```
 
+![PlantUML Colors](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/colors.svg "PlantUML Colors")
 
 [PlantUML]: https://plantuml.com/
 [Confluence]: https://www.atlassian.com/software/confluence
