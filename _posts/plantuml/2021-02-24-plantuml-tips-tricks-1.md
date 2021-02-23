@@ -14,7 +14,7 @@ With this post I want to share some tips and tricks from my experience using it.
 When using the component diagram, often the layout seems to have a mind of it's own. You can try to provide some guidelines to the rendering component by adding directions in the arrows (e.g. `-l->`) but when that doesn't work, I try to achieve an optimal layout by reorganizing the appearance of the components, especially when they are nested with e.g. `package`. It is a bit strange, but order in rendering seems to follow a reverse order of appearance in the script.
 
 # Multiple and options flows in a component diagram
-Sometimes, I want to have multiple flows within a component diagram. In this case and depending on the case, I use color coding with each arrow (e.g. `A -> B #Green : text` and possibly add a legend at the end
+Sometimes, I want to have multiple flows within a component diagram. In this case and depending on the case, I use color coding with each arrow (e.g. `A -> B #Green : text`) and possibly add a legend at the end
 
 ```
 @startuml
@@ -56,7 +56,8 @@ Bob <- Alice : Authentication Response
 @enduml
 ```
 
-I prefer the `autonumber "<B>[00]"` the most. By default, you can use the command as many times as you want to restart the numbering in the sequence.
+Autonumbers can be formatted. In the following example the number is 2-digit padded and highlighted.
+
 
 ```
 @startuml
@@ -73,9 +74,28 @@ Bob <- Alice : Authentication Response
 | simple | ![Simple autonumber](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/autonumber.svg "Simple autonumber") |
 | formatted | ![Formatted autonumber](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/autonumber-formatted.svg "Formatted autonumber") |
 
+I prefer the `autonumber "<B>[00]"` the most because I've never had to exceed 99 events in a diagram. Besides, when my diagrams become big, they are usuall split by a deviders and seperators (`==`) and for each I restart the the numbering in the sequence.
+
 # Text alignment in sequence diagram
 
-In the above example, the lines can be brought closer together to make the diagram more dense with this skin parameter `responseMessageBelowArrow true`.
+In the above example, the lines can be brought closer together to make the diagram more dense with this skin parameter `skinparam responseMessageBelowArrow true`.
+
+```
+@startuml
+
+skinparam responseMessageBelowArrow true
+
+autonumber "<B>[00]"
+Bob -> Alice : Authentication Request
+Bob <- Alice : Authentication Response
+
+@enduml
+```
+
+| Mode | Diagram |
+| ---- | ------- |
+| default | ![Default](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/autonumber-formatted.svg "Default") |
+| responseMessageBelowArrow | ![Response below arrow](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/response-below-arrow.svg "Response below arrow") |
 
 # Semi transparent group backgrounds in sequence diagrams
 
@@ -112,10 +132,12 @@ end
 | transparent | ![Transparent group background](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/transparent-group.svg "Transparent group background") |
 | semi-transparent | ![Semi-transparent group background](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/semi-transparent-group.svg "Semi-transparent group background") |
 
+# Solve cut off issue
+
+When using the default [PlantUML] server to render the diagrams in `png`, often the diagrams are cut off because [PlantUML] limits image width and height to 4096. This issue is discussed on github [issue][GH-136] and the solution is to either use command line parameters or use the `skinparam dpi X` parameter. When using the [VSCode PlantUML] add-on with the default server, this is the only solution as current the add-on doesn't support command line parameters. Unfortunately, the `X` for the dpi needs to be found by experimentation to make sure the diagram fits. As the diagram grows horizontally, the parameter needs to be adjusted accordingly.
 
 
-
-# Visualize all possible colors
+# Help with skinning
 
 [PlantUML] supports many different colors by name but it is kind of a maze. Use the `colors` command to render a picture with all colors
 
@@ -129,8 +151,13 @@ colors
 
 ![PlantUML Colors](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/colors.svg "PlantUML Colors")
 
+Unfortunately the [Skin Parameters] are not very well documented and the best comprehensive list is in the [All Skin Parameters] page.
+
+
+[VSCode PlantUML]: https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml
 [PlantUML]: https://plantuml.com/
 [Confluence]: https://www.atlassian.com/software/confluence
 [PlantUML Diagrams for Confluence]: https://marketplace.atlassian.com/apps/1215115/plantuml-diagrams-for-confluence?hosting=cloud&tab=overview
 [Skin Parameters]: https://plantuml.com/skinparam
 [All Skin Parameters]: https://plantuml-documentation.readthedocs.io/en/latest/formatting/all-skin-params.html
+[GH-136]: https://github.com/qjebbs/vscode-plantuml/issues/136
