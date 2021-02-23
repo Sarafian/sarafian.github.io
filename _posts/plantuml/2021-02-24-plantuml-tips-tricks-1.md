@@ -57,8 +57,6 @@ endlegend
 @enduml
 ```
 
-Note that the spaces inside the `<back></back>` element are intentional and each space represent one vertical line and 3 represent almost a square.
-
 ![Color coded legend](/assets/images/posts/plantuml/2021-02-24-plantuml-tips-tricks-1/legend.svg "Color coded legend")
 
 When sequence is important then I use a numbering scheme like this
