@@ -7,7 +7,7 @@ categories:
   - basics
 ---
 
-This post is part of a series intended to explain software engineering topics to an audience that is not technical or experts. Please consider the original [introduction post]({% link _posts/basics/2020-02-08-new-series-basics-software-engineering.md %}) for more context.
+This post is part of a series intended to explain software engineering topics to an audience that is not technical or experts. Please consider the original [introduction post]({% link _posts/basics/2020-03-01-new-series-basics-software-engineering.md %}) for more context.
 
 If you would search on google "what is continuous integration" and "what is continuous deployment" for Wikipedia links you would get the following two definitions respectively:
 
