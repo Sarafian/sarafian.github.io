@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="249px" preserveAspectRatio="none" style="width:227px;height:249px;" version="1.1" viewBox="0 0 227 249" width="227px" zoomAndPan="magnify"><defs><filter height="300%" id="frp9a7f8xibdd" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacing" textLength="104" x="59.75" y="28.708">solid-group</text><rect fill="#ADD8E6" height="202.125" style="stroke:#A80036;stroke-width:1.0;" width="125" x="12.5" y="40.9531"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="119" x="15.5" y="53.02">Internal Service</text><rect fill="#90EE90" height="202.125" style="stroke:#A80036;stroke-width:1.0;" width="68" x="139.5" y="40.9531"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="44" x="151.5" y="53.02">Other</text><rect fill="#FFFFFF" filter="url(#frp9a7f8xibdd)" height="75.3984" style="stroke:#000000;stroke-width:2.0;" width="203.5" x="10" y="112.3828"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="43" x2="43" y1="95.3828" y2="204.7813"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="103" x2="103" y1="95.3828" y2="204.7813"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="173.5" x2="173.5" y1="95.3828" y2="204.7813"/><rect fill="#FEFECE" filter="url(#frp9a7f8xibdd)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="43" x="20" y="60.0859"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="27" y="80.0811">Bob</text><rect fill="#FEFECE" filter="url(#frp9a7f8xibdd)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="43" x="20" y="203.7813"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="27" y="223.7764">Bob</text><rect fill="#FEFECE" filter="url(#frp9a7f8xibdd)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="49" x="77" y="60.0859"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="84" y="80.0811">Alice</text><rect fill="#FEFECE" filter="url(#frp9a7f8xibdd)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="49" x="77" y="203.7813"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="84" y="223.7764">Alice</text><rect fill="#FEFECE" filter="url(#frp9a7f8xibdd)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="56" x="143.5" y="60.0859"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="150.5" y="80.0811">Other</text><rect fill="#FEFECE" filter="url(#frp9a7f8xibdd)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="56" x="143.5" y="203.7813"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="150.5" y="223.7764">Other</text><path d="M10,112.3828 L99,112.3828 L99,119.3828 L89,129.3828 L10,129.3828 L10,112.3828 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="75.3984" style="stroke:#000000;stroke-width:2.0;" width="203.5" x="10" y="112.3828"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="44" x="25" y="125.4497">group</text><polygon fill="#A80036" points="91.5,146.6484,101.5,150.6484,91.5,154.6484,95.5,150.6484" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="43.5" x2="97.5" y1="150.6484" y2="150.6484"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="50.5" y="145.5825">hello</text><polygon fill="#A80036" points="161.5,175.7813,171.5,179.7813,161.5,183.7813,165.5,179.7813" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="103.5" x2="167.5" y1="179.7813" y2="179.7813"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="110.5" y="174.7153">hello</text><!--MD5=[7eb9fd7422e1f79558b44181100e60ff]
+@startuml
+title solid-group
+
+box "Internal Service" #LightBlue
+    participant Bob
+    participant Alice
+end box
+
+box "Other" #LightGreen
+    participant Other
+end box
+
+group group
+    Bob -> Alice : hello
+    Alice -> Other : hello
+end
+@enduml
+
+PlantUML version 1.2021.2beta9(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
