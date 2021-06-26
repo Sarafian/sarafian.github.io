@@ -17,7 +17,7 @@ excerpt: 'Space focused on DEVOPS for the windows ecosystem.'
 #intro: 
 #  - excerpt: 'Space focused on DEVOPS for the windows ecosystem.'
 feature_recent:
-  - image_path: http://www.ecigarette-research.org/research/images/recent-posts.jpg
+  - image_path: /assets/images/recent-posts.jpg
     alt: "Recent posts"
     title: "Recent posts"
     excerpt: "Recent posts of this blog."
@@ -25,7 +25,7 @@ feature_recent:
     btn_label: "Go to posts"
     btn_class: "btn--large btn--info"
 feature_tips:
-  - image_path: http://wcd.so/wp-content/uploads/2013/03/image4.jpg
+  - image_path: /assets/images/tips-tricks.jpg
     alt: "Tips"
     title: "Tips & Tricks"
     excerpt: "Useful tips and tricks."
