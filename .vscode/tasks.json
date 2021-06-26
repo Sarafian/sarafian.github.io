@@ -16,10 +16,14 @@
                 "--force_polling",
                 "-i"
             ],
-            "group": "none",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "presentation": {
                 "reveal": "silent"
-            }
+            },
+            "problemMatcher": []
         },
         {
             "label": "Bundle Jekyll Clean",
