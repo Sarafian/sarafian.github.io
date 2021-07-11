@@ -15,6 +15,10 @@ In this post, I want to explain how to create a private bot in [Telegram]. With 
 
 With [Telegram] bots are not private. Everybody can find them. The difference is that a certain communication channel with the bot can be made private. This is a group with the bot that you and the bot are members of. This sort of private channels is usually useful for home automation, where the bot is to speak with one person only.
 
+**Update 11/07/2021**
+
+Some very nice people who read recently my post pointed out that the creation of the group to maintain privacy is not necessary and just using the `chat_id` is good enough. Thanks to @Jerry,@Terry and @J for their feedback and clarification from the comments section. I've not modified the rest of the post and please refer to their comments below if you don't want to create the group. Thanks guys.
+
 ## Creating the bot
 
 Creating the bot is generally easy by following instructions on [Bots: An introduction for developers] using the [BotFather]. 
