@@ -4,82 +4,23 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Bundle Jekyll Serve",
+            "label": "Serve",
             "type": "shell",
-            "command": "bundle",
-            "args": [
-                "exec",
-                "jekyll",
-                "serve",
-                "-l",
-                "-w",
-                "--force_polling",
-                "-i"
-            ],
+            "command": "bundle exec jekyll serve --livereload",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "isBackground": true,
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "bundle exec jekyll build",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "presentation": {
-                "reveal": "silent"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "Bundle Jekyll Clean",
-            "type": "shell",
-            "command": "bundle",
-            "args": [
-                "exec",
-                "jekyll",
-                "clean"
-            ],
-            "group": "none",
-            "presentation": {
-                "reveal": "silent"
-            }
-        },
-        {
-            "label": "WSL (Debian) Bundle Jekyll Clean",
-            "type": "shell",
-            "command": "wsl",
-            "args": [
-                "-d",
-                "Debian",
-                "-e",
-                "bundle",
-                "exec",
-                "jekyll",
-                "clean"
-            ],
-            "group": "none",
-            "presentation": {
-                "reveal": "silent"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "WSL (Debian) Bundle Jekyll Serve",
-            "type": "shell",
-            "command": "wsl",
-            "args": [
-                "-d",
-                "Debian",
-                "-e",
-                "bundle",
-                "exec",
-                "jekyll",
-                "serve",
-                "-l",
-                "-w",
-                "--force_polling",
-                "-i"
-            ],
-            "group": "none",
-            "presentation": {
-                "reveal": "silent"
-            },
-            "problemMatcher": []
         }
     ]
 }
